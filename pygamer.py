@@ -8,7 +8,7 @@ pygame.init()
 pygame.mixer.pre_init(44100, 16, 2, 4096)
 
 #crash_Sound = pygame.mixer.Sound(".wav")
-pygame.mixer.music.load('C:\\Users\\Administrator\\Desktop\\pygamer\\music\\TRAPFORD.wav')
+pygame.mixer.music.load('music\\TRAPFORD.wav')
 
 #Display Size
 display_width = 800
@@ -45,13 +45,13 @@ HS_FILE = "highscore.txt"
 #		except:
 #			highscore = 0
 #Images
-icon = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\icon.png')
-shitcoin = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\shitcoin.png')
-shitcoin1 = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\shitcoin1.png')
-#blockImg = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\blockImg.png')
-spaceImg = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\XMR.png')
-bkgd = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\starcloud.jpg').convert()
-bkgd_main = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\moonero.png')
+icon = pygame.image.load('img\\icon.png')
+shitcoin = pygame.image.load('img\\shitcoin.png')
+shitcoin1 = pygame.image.load('img\\shitcoin1.png')
+
+spaceImg = pygame.image.load('img\\XMR.png')
+bkgd = pygame.image.load('img\\starcloud.jpg').convert()
+bkgd_main = pygame.image.load('img\\moonero.png')
 #ICON
 pygame.display.set_icon(icon)
 #Title
@@ -70,13 +70,13 @@ class Block(pygame.sprite.Sprite):
 	def __init__(self,color):
 		pygame.sprite.Sprite.__init__(self)
 		
-		self.image = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\blockImg.png')
+		self.image = pygame.image.load('img\\blockImg.png')
 		self.rect = self.image.get_rect()
 		
 class Bullet(pygame.sprite.Sprite):
 	def __init__(self):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load('C:\\Users\\Administrator\\Desktop\\pygamer\\img\\icon.png')
+		self.image = pygame.image.load('img\\icon.png')
 		self.rect = self.image.get_rect()
 		
 	def update(self):
@@ -89,17 +89,7 @@ class Bullet(pygame.sprite.Sprite):
 
 
 def points_gained(count):
-	#gained = str(count)
-	#with open(path.join(HS_FILE), 'r') as f:
-	#	try:
-	#		highscore = str(f.read())
-	#	except:
-	#		highscore = 0
-	#
-	#if int(gained) > int(highscore):
-	#	highscore = gained
-	#	with open(path.join(HS_FILE), 'w') as f:
-	#		f.write(str(count))
+	
 
 	font = pygame.font.Font("goth.ttf", 25)
 	text = font.render("Score: " + str(count), True, black)
